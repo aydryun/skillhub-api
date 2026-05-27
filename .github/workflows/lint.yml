@@ -18,7 +18,9 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Set up Docker Compose v2
-      uses: docker/compose-action@v3
+      uses: hoverkraft-tech/compose-action@v2.6.0
+      with:
+        compose-file: "./compose.yml"
 
     - name: Copier le fichier d'environnement
       run: cp .env.dist .env
