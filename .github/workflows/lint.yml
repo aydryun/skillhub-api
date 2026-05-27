@@ -25,7 +25,6 @@ jobs:
       with:
         compose-file: "./compose.yml"
 
-
     - name: Lint
       run: docker compose run --rm app npm run lint
 
