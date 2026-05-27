@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   pull_request:
-    branches: [ "stage" ]
+    branches: [ "dev" ]
 
 jobs:
 
@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker compose build . --tag skillhub-api-preview:${{ github.sha }}
+      run: docker build . -t skillhub-api-preview:${{ github.sha }}
