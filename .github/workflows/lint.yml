@@ -1,0 +1,19 @@
+name: lint
+
+on:
+  pull_request:
+    branches: [ "dev", "stage", "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Copier le fichier d'environnement
+      run: cp .env.dist .env
+    - name: Lint
+      run: docker compose run --rm app npm run lint
+    - name: Tests
+      run: docker compose run --rm app npm test
