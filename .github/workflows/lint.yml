@@ -1,8 +1,10 @@
 name: lint
 
 on:
+  push:
+    branches: ["dev"]
   pull_request:
-    branches: [ "dev", "stage", "main" ]
+    branches: ["stage", "main" ]
 
 jobs:
 
