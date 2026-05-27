@@ -20,6 +20,10 @@ jobs:
 
     - name: Set up Docker Compose v2
       uses: hoverkraft-tech/compose-action@v2.6.0
+      env:
+        POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+        POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+        POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
       with:
         compose-file: "./compose.yml"
 
